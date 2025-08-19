@@ -1,12 +1,33 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn, isValidEmail } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { Mail, Linkedin, Twitter, Github, Shield, Award, CheckCircle } from "lucide-react";
+import { subscribeUser } from "@/lib/subscribe";
 
 export function FooterWithGrid() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async () => {
+    if (!email || !isValidEmail(email)) {
+      setStatus("Please enter a valid email address.");
+      setTimeout(() => setStatus(null), 4000);
+      return;
+    }
+
+    setLoading(true);
+    const res = await subscribeUser(email);
+    setStatus(res.message);
+    setLoading(false);
+
+    if (res.success) setEmail("");
+    setTimeout(() => setStatus(null), 4000);
+  };
+
   return (
     <div className="bg-slate-900">
       <div className="mx-auto max-w-7xl px-4 py-16 md:px-8">
@@ -41,13 +62,23 @@ export function FooterWithGrid() {
               <div className="flex gap-2">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="flex-1 px-3 py-2 bg-slate-800 border border-slate-700 rounded-md text-white text-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
                 />
-                <button className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-md transition-colors">
-                  Subscribe
+                <button 
+                  onClick={handleSubscribe}
+                  disabled={loading}
+                  className={cn(
+                    "px-4 py-2 text-white text-sm font-medium rounded-md transition-colors",
+                    loading ? "bg-emerald-400 cursor-not-allowed" : "bg-emerald-600 hover:bg-emerald-700"
+                  )}
+                >
+                  {loading ? "Sending..." : "Subscribe"}
                 </button>
               </div>
+              {status && <p className="mt-2 text-sm text-emerald-400">{status}</p>}
             </div>
           </div>
         </div>
