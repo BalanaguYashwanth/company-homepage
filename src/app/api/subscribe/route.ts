@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { isValidEmail } from "@/lib/utils";
 
 async function createTransporter() {
   if (
@@ -29,7 +30,7 @@ export async function POST(req: NextRequest) {
   try {
     const { email } = await req.json();
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!email || !isValidEmail(email)) {
       return NextResponse.json({ message: "Invalid email address" }, { status: 400 });
     }
 
@@ -38,7 +39,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Email service not configured" }, { status: 500 });
     }
 
-    await transporter.sendMail({
+    transporter.sendMail({
       from: `"FormPilot Newsletter" <${process.env.EMAIL_SENDER}>`,
       to: process.env.EMAIL_RECEIVER,
       subject: "📬 New Newsletter Subscription",
