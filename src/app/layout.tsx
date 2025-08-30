@@ -5,7 +5,7 @@ import ErrorReporter from "@/components/ErrorReporter";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Formpilot",
+  title: "Cognito Innovations",
   description: "Innovative Software Solutions",
 };
 

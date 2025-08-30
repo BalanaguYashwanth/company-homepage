@@ -95,7 +95,7 @@ export default function InHouseProductsShowcase() {
       name: "BuzzAgent",
       description: "Companion Agent adds trending and viral content to their socials autonomously and helps creators to grow visibility",
       icon: DollarSign,
-      Link:"http://buzzagent.formpilot.org",
+      Link:"http://buzzagent.reezoai.com",
       gradient: "bg-gradient-to-br from-blue-500 to-blue-600",
       textColor: "text-white"
     },

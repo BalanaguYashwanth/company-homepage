@@ -154,7 +154,7 @@ export default function AIExpertiseSection() {
             {/* Pipeline Steps */}
             {[
               { icon: Database, label: "Data Ingestion", desc: "Multi-source data collection" },
-              { icon: GitBranch, label: "Processing", desc: "ETL & feature engineering" },
+              { icon: GitBranch, label: "Processing", desc: "Feature engineering" },
               { icon: Brain, label: "Model Training", desc: "AI/ML model development" },
               { icon: TrendingUp, label: "Deployment", desc: "Production optimization" }
             ].map((step, index) => {

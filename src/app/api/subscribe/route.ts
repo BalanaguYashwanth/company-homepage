@@ -40,22 +40,22 @@ export async function POST(req: NextRequest) {
     }
 
     transporter.sendMail({
-      from: `"FormPilot Newsletter" <${process.env.EMAIL_SENDER}>`,
+      from: `"Cognito Innovations Newsletter" <${process.env.EMAIL_SENDER}>`,
       to: process.env.EMAIL_RECEIVER,
       subject: "📬 New Newsletter Subscription",
-      text: `A new user has subscribed to the FormPilot Newsletter.\n\nEmail: ${email}`,
+      text: `A new user has subscribed to the Cognito Innovations Newsletter.\n\nEmail: ${email}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #111;">
           <h2 style="color: #10B981;">New Newsletter Subscriber</h2>
           <p>Hello Team,</p>
-          <p>A new user has subscribed to the FormPilot newsletter. Here are the details:</p>
+          <p>A new user has subscribed to the Cognito Innovations newsletter. Here are the details:</p>
           <table style="border-collapse: collapse; width: 100%; max-width: 400px;">
             <tr>
               <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Email:</td>
               <td style="padding: 8px; border: 1px solid #ddd;">${email}</td>
             </tr>
           </table>
-          <p style="margin-top: 20px;">Cheers,<br/>FormPilot Team</p>
+          <p style="margin-top: 20px;">Cheers,<br/>Cognito Innovations Team</p>
         </div>
       `,
     });

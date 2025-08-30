@@ -87,7 +87,7 @@ export function FooterWithGrid() {
         <div className="border-slate-700">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <p className="text-sm text-slate-400">
-              &copy; {new Date().getFullYear()} Formpilot. All Rights Reserved.
+              &copy; {new Date().getFullYear()} Cognito Innovations. All Rights Reserved.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               <Link href="/privacy" className="text-slate-400 hover:text-emerald-400 transition-colors">
@@ -150,7 +150,7 @@ const LogoFooter = ({ className }: { className?: string }) => {
     >
       <Logo />
       <div className="flex items-center gap-3">
-        <span className="text-xl font-bold text-white">FormPilot</span>
+        <span className="text-xl font-bold text-white">Cognito Innovations</span>
         <div className="rounded-full border border-emerald-600 bg-emerald-600/10 px-2 py-0.5 text-xs font-semibold text-emerald-400">
           Enterprise
         </div>

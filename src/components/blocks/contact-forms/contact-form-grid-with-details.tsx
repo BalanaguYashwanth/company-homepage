@@ -25,12 +25,11 @@ export function ContactFormGridWithDetails() {
 
           <div className="mt-10 hidden flex-col items-center gap-4 md:flex-row lg:flex">
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              enterprise@formpilot.org
+              team@cognitoinnovations.org
             </p>
 
             <div className="h-1 w-1 rounded-full bg-slate-500 dark:bg-slate-400" />
             <p className="text-sm text-slate-500 dark:text-slate-400">
-              +1 (555) 247-8900
             </p>
             <div className="h-1 w-1 rounded-full bg-slate-500 dark:bg-slate-400" />
 
