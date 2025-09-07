@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Brain, Blocks, DollarSign } from 'lucide-react';
+import { ArrowRight, Brain, Blocks, DollarSign, Truck } from 'lucide-react';
 
 interface Product {
   name: string;
@@ -63,7 +63,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, isLarge = fal
         </p>
 
         {/* Call to action */}
-        <motion.a
+        {/* <motion.a
           href={product.link || "#"}
           target="_blank"
           rel="noopener noreferrer"
@@ -72,7 +72,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, isLarge = fal
         >
           <span>Learn More</span>
           <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
-        </motion.a>
+        </motion.a> */}
       </div>
 
       {/* Decorative element */}
@@ -106,6 +106,14 @@ export default function InHouseProductsShowcase() {
       Link:"/",
       gradient: "bg-gradient-to-br from-slate-700 to-slate-800",
       textColor: "text-white"
+    },
+    {
+      name: "UG Global",
+      description: "Build advanced software logistics systems that streamline operations, optimize supply chain workflows, and enable real-time tracking.",
+      icon: Truck,
+      Link:"/",
+      gradient: "bg-gradient-to-br from-slate-700 to-red-800",
+      textColor: "text-white"
     }
   ];
 
@@ -137,26 +145,16 @@ export default function InHouseProductsShowcase() {
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {/* ReezoAI - Large card */}
-          <ProductCard 
-            product={products[0]} 
-            index={0} 
-            isLarge={true}
-            Link={products[0]}
-          />
-
-          {/* Solstrom and PayLLM - Smaller cards */}
-          <div className="space-y-6 lg:space-y-8">
-            <ProductCard 
-              product={products[1]} 
-              index={1}
-              Link={products[1]}
-            />
-            <ProductCard 
-              product={products[2]} 
-              index={2} 
-            />
-          </div>
+          {
+            products.map((product, index) => (
+              <ProductCard 
+                key={index}
+                product={product} 
+                index={index} 
+                Link={product.Link}
+              />
+            ))
+          }
         </div>
 
         {/* Bottom decoration */}

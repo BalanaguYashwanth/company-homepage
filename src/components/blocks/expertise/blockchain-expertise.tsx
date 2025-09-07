@@ -173,13 +173,13 @@ const ExpertiseCard = ({ item, index }: { item: any, index: number }) => {
         </motion.div>
 
         {/* Action Button */}
-        <motion.div 
+        {/* <motion.div 
           className="mt-6 flex items-center text-accent group-hover:text-white transition-colors duration-300"
           animate={isHovered ? { x: 10 } : { x: 0 }}
         >
           <span className="text-sm font-medium">Learn More</span>
           <ArrowRight className="w-4 h-4 ml-2" />
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   )

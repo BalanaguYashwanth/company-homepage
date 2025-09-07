@@ -44,7 +44,7 @@ export function ModernHeroWithGradients() {
                 href="#"
                 className="flex items-center gap-2 rounded-full border border-emerald-500/20 bg-gradient-to-r from-emerald-500/10 to-emerald-400/10 px-6 py-2 text-center text-sm text-emerald-400 hover:from-emerald-500/20 hover:to-emerald-400/20 transition-all duration-300"
               >
-                <span className="font-[var(--font-inter)]">Enterprise Solutions</span>
+                <span className="font-[var(--font-inter)]">Technology Solutions</span>
                 <ArrowRight className="h-4 w-4 text-emerald-400" />
               </Link>
             </motion.div>
@@ -163,6 +163,7 @@ const Navbar = () => {
   return (
     <nav className="flex items-center justify-between">
       <Logo />
+      {/* Add navlinks
       <div className="hidden items-center gap-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-md px-6 py-3 lg:flex">
         {links.map((link, idx) => (
           <Link
@@ -173,7 +174,7 @@ const Navbar = () => {
             {link.label}
           </Link>
         ))}
-      </div>
+      </div> */}
       <Link
         href={TYPEFORM_LINK}
         target="_blank"

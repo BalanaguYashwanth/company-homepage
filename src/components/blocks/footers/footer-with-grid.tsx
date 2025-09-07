@@ -57,7 +57,8 @@ export function FooterWithGrid() {
             </div>
 
             {/* Newsletter Signup */}
-            <div className="max-w-md">
+            {/* TODO: Add newsletter signup */}
+            {/* <div className="max-w-md">
               <h4 className="text-sm font-semibold text-white mb-3">Stay Updated</h4>
               <div className="flex gap-2">
                 <input
@@ -79,7 +80,7 @@ export function FooterWithGrid() {
                 </button>
               </div>
               {status && <p className="mt-2 text-sm text-emerald-400">{status}</p>}
-            </div>
+            </div> */}
           </div>
         </div>
 
