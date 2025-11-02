@@ -90,7 +90,7 @@ export function FooterWithGrid() {
             <p className="text-sm text-slate-400">
               &copy; {new Date().getFullYear()} Cognito Innovations. All Rights Reserved.
             </p>
-            <div className="flex flex-wrap gap-6 text-sm">
+            {/* <div className="flex flex-wrap gap-6 text-sm">
               <Link href="/privacy" className="text-slate-400 hover:text-emerald-400 transition-colors">
                 Privacy Policy
               </Link>
@@ -100,7 +100,7 @@ export function FooterWithGrid() {
               <Link href="/security" className="text-slate-400 hover:text-emerald-400 transition-colors">
                 Security
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

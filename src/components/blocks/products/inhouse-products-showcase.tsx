@@ -167,7 +167,7 @@ export default function InHouseProductsShowcase() {
         >
           <div className="inline-flex items-center gap-2 text-slate-400 text-sm">
             <div className="w-12 h-px bg-slate-300" />
-            <span>Innovating for tomorrow</span>
+            <span id="industries">Innovating for tomorrow</span>
             <div className="w-12 h-px bg-slate-300" />
           </div>
         </motion.div>

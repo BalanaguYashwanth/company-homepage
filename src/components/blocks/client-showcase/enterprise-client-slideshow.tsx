@@ -68,7 +68,7 @@ export default function EnterpriseClientSlideshow() {
   }, [isHovered])
 
   return (
-    <section className="bg-slate-950 py-24 px-6 overflow-hidden">
+    <section className="bg-slate-950 py-24 px-6 overflow-hidden" id="clients">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.div

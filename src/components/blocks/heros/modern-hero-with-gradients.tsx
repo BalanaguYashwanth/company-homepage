@@ -154,16 +154,16 @@ const VideoBackgroundPattern = () => {
 
 const Navbar = () => {
   const links = [
-    { label: "Solutions", href: "#" },
-    { label: "Industries", href: "#" },
-    { label: "Case Studies", href: "#" },
-    { label: "Resources", href: "#" }
+    { label: "Solutions", href: "#solutions" },
+    { label: "Projects", href: "#products" },
+    { label: "Case Studies", href: "#clients" },
+    { label: "Industries", href: "#industries" }
   ];
   
   return (
     <nav className="flex items-center justify-between">
       <Logo />
-      {/* Add navlinks
+      {/* Add navlinks */}
       <div className="hidden items-center gap-8 rounded-full border border-slate-700/50 bg-slate-800/30 backdrop-blur-md px-6 py-3 lg:flex">
         {links.map((link, idx) => (
           <Link
@@ -174,14 +174,14 @@ const Navbar = () => {
             {link.label}
           </Link>
         ))}
-      </div> */}
+      </div>
       <Link
         href={TYPEFORM_LINK}
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-6 py-2 text-sm font-medium text-emerald-400 transition duration-200 hover:bg-emerald-500/20 font-[var(--font-inter)]"
       >
-        Get Started
+        Contact us
       </Link>
     </nav>
   );
