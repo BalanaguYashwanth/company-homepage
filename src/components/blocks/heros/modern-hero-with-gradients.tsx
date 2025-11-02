@@ -74,7 +74,7 @@ export function ModernHeroWithGradients() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <Link
-                href="#"
+                href="#products"
                 className="group relative overflow-hidden rounded-full bg-emerald-500 px-8 py-3 text-center text-base font-semibold text-white transition-all duration-300 hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/25 font-[var(--font-inter)]"
               >
                 <span className="relative z-10">Explore Our Solutions</span>

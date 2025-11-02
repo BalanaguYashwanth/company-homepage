@@ -118,7 +118,7 @@ export default function InHouseProductsShowcase() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 px-6 lg:px-8 relative overflow-hidden">
+    <section className="bg-slate-50 py-20 px-6 lg:px-8 relative overflow-hidden" id="products">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-32 h-32 bg-emerald-100 rounded-full opacity-60 blur-xl" />
