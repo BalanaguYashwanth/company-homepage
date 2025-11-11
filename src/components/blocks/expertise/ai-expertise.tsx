@@ -1,12 +1,35 @@
 "use client"
 
 import { motion, useInView } from 'motion/react'
-import { useRef } from 'react'
+import { useRef, useMemo } from 'react'
 import { Brain, Database, Zap, GitBranch, Bot, TrendingUp } from 'lucide-react'
+
+// Seeded random number generator for consistent values
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000
+  return x - Math.floor(x)
+}
 
 export default function AIExpertiseSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
+
+  // Generate deterministic positions for nodes and connections
+  const nodePositions = useMemo(() => {
+    return Array.from({ length: 20 }, (_, i) => ({
+      cx: seededRandom(i) * 1200,
+      cy: seededRandom(i + 100) * 800,
+    }))
+  }, [])
+
+  const connectionPositions = useMemo(() => {
+    return Array.from({ length: 15 }, (_, i) => ({
+      x1: seededRandom(i + 200) * 1200,
+      y1: seededRandom(i + 300) * 800,
+      x2: seededRandom(i + 400) * 1200,
+      y2: seededRandom(i + 500) * 800,
+    }))
+  }, [])
 
   const expertiseAreas = [
     {
@@ -35,24 +58,24 @@ export default function AIExpertiseSection() {
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
           {/* Neural nodes */}
-          {[...Array(20)].map((_, i) => (
+          {nodePositions.map((pos, i) => (
             <circle
               key={`node-${i}`}
-              cx={Math.random() * 1200}
-              cy={Math.random() * 800}
+              cx={pos.cx}
+              cy={pos.cy}
               r="3"
               fill="currentColor"
               className="text-primary"
             />
           ))}
           {/* Neural connections */}
-          {[...Array(15)].map((_, i) => (
+          {connectionPositions.map((pos, i) => (
             <motion.line
               key={`connection-${i}`}
-              x1={Math.random() * 1200}
-              y1={Math.random() * 800}
-              x2={Math.random() * 1200}
-              y2={Math.random() * 800}
+              x1={pos.x1}
+              y1={pos.y1}
+              x2={pos.x2}
+              y2={pos.y2}
               stroke="currentColor"
               strokeWidth="1"
               className="text-primary"

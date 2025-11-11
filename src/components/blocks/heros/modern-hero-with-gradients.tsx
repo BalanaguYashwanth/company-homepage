@@ -157,7 +157,8 @@ const Navbar = () => {
     { label: "Solutions", href: "#solutions" },
     { label: "Projects", href: "#products" },
     { label: "Case Studies", href: "#clients" },
-    { label: "Industries", href: "#industries" }
+    { label: "Industries", href: "#industries" },
+    { label: "Blog", href: "/blogs" }
   ];
   
   return (
