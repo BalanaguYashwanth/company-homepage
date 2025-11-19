@@ -255,7 +255,7 @@ export default async function BlogPostPage({
                   </div>
                   <div>
                     <p className="font-medium text-white">{post.author}</p>
-                    <p className="text-xs">{post.authorRole}</p>
+                    <p className="text-xs text-slate-400">{post.authorRole}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-1.5">
